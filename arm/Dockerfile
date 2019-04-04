@@ -1,11 +1,17 @@
 FROM reisen/debian-arm-qemu AS add-apt-repositories
 
+RUN [ "cross-build-start" ]
+
 RUN apt-get update \
  && DEBIAN_FRONTEND=noninteractive apt-get install -y gnupg \
  && apt-key adv --fetch-keys http://www.webmin.com/jcameron-key.asc \
  && echo "deb http://download.webmin.com/download/repository sarge contrib" >> /etc/apt/sources.list
 
+RUN [ "cross-build-end" ]
+
 FROM reisen/debian-arm-qemu
+
+RUN [ "cross-build-start" ]
 
 LABEL maintainer="sameer@damagehead.com"
 
@@ -30,6 +36,8 @@ COPY entrypoint.sh /sbin/entrypoint.sh
 RUN chmod 755 /sbin/entrypoint.sh
 
 EXPOSE 53/udp 53/tcp 10000/tcp
+
+RUN [ "cross-build-start" ]
 
 ENTRYPOINT ["/sbin/entrypoint.sh"]
 
