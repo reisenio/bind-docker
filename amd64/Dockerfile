@@ -8,7 +8,7 @@ RUN apt-get update \
 
 # FROM debian:latest
 
-LABEL maintainer="sameer@damagehead.com"
+LABEL maintainer="jcgaliana@gmail.com"
 
 ENV BIND_USER=bind \
 #    BIND_VERSION=9.11.3 \
