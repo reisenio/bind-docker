@@ -1,3 +1,5 @@
+# 20191205 Force rebuild 
+
 FROM reisen/debian-arm-qemu AS add-apt-repositories
 
 RUN [ "cross-build-start" ]
