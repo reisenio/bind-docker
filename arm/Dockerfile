@@ -16,8 +16,8 @@ RUN [ "cross-build-start" ]
 LABEL maintainer="sameer@damagehead.com"
 
 ENV BIND_USER=bind \
-    BIND_VERSION=9.11.3 \
-    WEBMIN_VERSION=1.9 \
+#    BIND_VERSION=9.11.3 \
+#    WEBMIN_VERSION=1.9 \
     DATA_DIR=/data
 
 COPY --from=add-apt-repositories /etc/apt/trusted.gpg /etc/apt/trusted.gpg
